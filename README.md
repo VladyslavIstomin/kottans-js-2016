@@ -1,0 +1,1 @@
+<h1>Home tasks for JS course of Kottans</h1> 
