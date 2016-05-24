@@ -5,21 +5,30 @@
 	const gulp = require('gulp');
 
 	const reqexpBootstrap = /col-(xs|sm|md|lg)-\d{1,2}/g;
-	const reqexpJs = /js-/g;
+	const reqexpJs = /js-[\w{1,}\-]+/g;
 
 	gulp.task('posthtml', function () {
 		const plugin = tree => {
 				tree.match({}, node => {
-					let nodeClass = node.attrs.class;
+					let nodeAttrs = node.attrs;
+					let dataArr = [];
 
-					if(reqexpBootstrap.test(nodeClass)) {
-						node.attrs.class = nodeClass.replace(reqexpBootstrap, '').trim();
-						nodeClass = node.attrs.class;
+					// Delete bootstrap classes
+					if(reqexpBootstrap.test(nodeAttrs.class)) {
+						node.attrs.class = nodeAttrs.class.replace(reqexpBootstrap, '').trim();
+						nodeAttrs = node.attrs;
 					}
 
-					if(reqexpJs.test(node.attrs.class)) {
-						node.attrs.class = nodeClass.replace(reqexpJs, 'data-');
-						nodeClass = node.attrs.class;
+					// Replace classes with js to data attribute
+					if(reqexpJs.test(nodeAttrs.class)) {
+						nodeAttrs.class.match(reqexpJs).forEach(data => {
+							dataArr.push(data.replace(/js-/, ''));
+						});
+
+						nodeAttrs['data-js'] = dataArr.join(' ');
+
+						node.attrs.class = nodeAttrs.class.replace(reqexpJs, '').trim();
+						nodeAttrs = node.attrs;
 					}
 
 					return node;
