@@ -1,0 +1,16 @@
+{
+	"name": "PostHtml",
+	"version": "1.0.0",
+	"description": "gulp for posthtml",
+	"main": "gulpfile.js",
+	"dependencies": {
+		"gulp": "^3.9.0",
+		"gulp-posthtml": "^1.5.2"
+	},
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/VladyslavIstomin/kottans-js-2016.git"
+	},
+	"author": "Vladyslav Istomin",
+	"license": "ISC"
+}
