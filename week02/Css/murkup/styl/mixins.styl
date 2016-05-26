@@ -1,0 +1,47 @@
+
+border-radius($radius)
+  -webkit-border-radius $radius;
+  -moz-border-radius $radius;
+  -ms-border-radius $radius;
+  border-radius $radius;
+
+box-shadow($shadow)
+  -webkit-box-shadow $shadow;
+  -moz-box-shadow $shadow;
+  box-shadow $shadow;
+
+transition($param1, $param2)
+  -webkit-transition $param1, $param2;
+  -moz-transition $param1, $param2;
+  -o-transition $param1, $param2;
+  transition $param1, $param2;
+
+transition-single($param)
+  -webkit-transition $param;
+  -moz-transition $param;
+  -o-transition $param;
+  transition $param;
+
+background-gradient($color-begin, $color-end)
+  background $color-begin;
+  background -moz-linear-gradient(top, $color-begin 0%, $color-end 100%);
+  background -webkit-gradient(linear, left top, left bottom, color-stop(0%, $color-begin), color-stop(100%, $color-end));
+  background -webkit-linear-gradient(top, $color-begin 0%, $color-end 100%);
+  background -o-linear-gradient(top, $color-begin 0%, $color-end 100%);
+  background -ms-linear-gradient(top, $color-begin 0%, $color-end 100%);
+  background linear-gradient(to bottom, $color-begin 0%, $color-end 100%);
+
+flex()
+  display flex;
+  display -webkit-flex;
+
+justify-content($space)
+  justify-content $space;
+  -webkit-justify-content $space;
+  -moz-justify-content $space;
+
+ box-sizing($value)
+  -ms-box-sizing $value;
+  -moz-box-sizing $value;
+  -webkit-box-sizing $value;
+  box-sizing $value;
