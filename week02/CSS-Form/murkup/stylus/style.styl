@@ -1,0 +1,97 @@
+@import "reset.styl"
+@import "mixins.styl"
+@import "mixins.styl"
+@import "variable.styl"
+
+
+body
+  background page-bg
+  font-family font
+
+.head-page
+  max-width width-page
+  flex()
+  justify-content space-between
+  align-items flex-start
+  padding 63px 0
+  margin 0 auto
+
+  .logo
+    width 100px
+    height 100px
+    background: url('../img/logo.png') no-repeat
+    background-size  100% 100%
+
+    a
+      display block
+      height 100%
+      text-indent -9999px
+
+.btn
+  font-family font
+  text-transform uppercase
+  background page-bg
+  color #a5abc5
+  border 1px solid #a5abc5
+  border-radius(3px)
+  padding 20px
+
+.head-page .btn::before
+  content ''
+  display inline-block
+  width 18px
+  height 18px
+  vertical-align middle
+  margin-right 15px
+
+.btn-back::before
+  background: url('../img/sprite-icons.png') no-repeat -320px -32px
+
+.btn-sign::before
+  background: url('../img/sprite-icons.png') no-repeat -288px -32px
+
+.main
+  max-width width-page
+  border 1px solid #a5abc5
+  border-radius(3px)
+  background: #fff
+  margin 0 auto
+
+.form-head
+  flex()
+  border-bottom 1px solid #a5abc5
+
+  section
+    flex-grow 1
+    padding 25px 35px
+
+    h1
+      font 20px/1.24 font
+      text-transform uppercase
+      color #6e768f
+      margin-bottom 15px
+
+.order
+  flex-basis 75%
+  border-right 1px solid #a5abc5
+
+  h1
+    width 75%
+    display inline-block
+
+.table-order
+  width 75%
+  display inline-table
+  text-align left
+  font 16px/1.24 font
+  font-weight bold
+  color #a5abc5
+  margin-bottom 20px
+
+  tr
+    padding 10px 0
+
+  th
+    text-transform uppercase
+    color #6e768f
+    padding 10px 0
