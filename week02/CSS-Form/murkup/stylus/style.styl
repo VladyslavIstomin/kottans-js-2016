@@ -275,7 +275,55 @@ h1
 
 .range-time
 	position relative
-	margin-bottom 30px
+	margin-bottom 50px
 
 	input
 		width 50%
+		margin-left 35px
+
+	.start
+		position absolute
+		top 25px
+		left 0
+		z-index 15
+		text-transform uppercase
+		font-size 16px
+		color #6e768f
+
+	.end
+		position absolute
+		top 25px
+		left 50%
+		z-index 15
+		text-transform uppercase
+		font-size 16px
+		color #6e768f
+
+.timeline
+	border 1px solid #6e768f
+	border-radius(5px)
+	font-size 16px
+	color #6e768f
+	position relative
+	padding 20px 20px 20px 40px
+
+	&::before
+		content ''
+		background url('../img/sprite-icons.png') no-repeat -208px 0
+		width 15px
+		height 15px
+		display block
+		position absolute
+		top 37px
+		left 10px
+		z-index 10
+
+	h1
+		text-transform uppercase
+		font-size 20px
+		color #727895
+		margin-bottom 20px
+
+	span
+		text-transform uppercase
+		color #edbe76
