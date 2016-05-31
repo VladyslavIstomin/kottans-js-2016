@@ -14,23 +14,27 @@
 	<form action=#>
 		<div class=form-head>
 			<section class=order>
-				<h1>your order</h1>
-				<table class=table-order>
-					<tr>
-						<th>items</th>
-						<th>details</th>
-						<th>price</th>
-						<th>delivery</th>
-					</tr>
-					<tr>
-						<td>2 documents</td>
-						<td>2 languages</td>
-						<td>$ 696.345</td>
-						<td>48 hours</td>
-					</tr>
-				</table>
-				<button class=submit>place order</button>
-				<button class=btn>print a quote</button>
+				<section class="your-order">
+					<h1>your order</h1>
+					<table class=table-order>
+						<tr>
+							<th>items</th>
+							<th>details</th>
+							<th>price</th>
+							<th>delivery</th>
+						</tr>
+						<tr>
+							<td>2 documents</td>
+							<td>2 languages</td>
+							<td>$ 696.345</td>
+							<td>48 hours</td>
+						</tr>
+					</table>
+				</section>
+				<div class="btn-holder">
+					<button class=submit>place order</button>
+					<button class=btn>print a quote</button>
+				</div>
 			</section>
 			<section class=help>
 				<h1>help center</h1>
@@ -39,6 +43,128 @@
 				<a href="mailto:help@qtest.com">help@qtest.com</a>
 			</section>
 		</div>
+		<section class="translate">
+			<div class="title-holder">
+				<h1>Select what you want to translate</h1>
+			</div>
+			<div class="translate-items">
+				<label>
+					<input type="checkbox"/>
+					<span></span>
+					<figure>
+						<img src="img/web.jpg" alt="Web"/>
+						<figcaption>
+							Website
+						</figcaption>
+					</figure>
+				</label>
+				<label>
+					<input type="checkbox"/>
+					<span></span>
+					<figure>
+						<img src="img/doc.jpg" alt="Document"/>
+						<figcaption>
+							Document
+						</figcaption>
+					</figure>
+				</label>
+				<label>
+					<input type="checkbox"/>
+					<span></span>
+					<figure>
+						<img src="img/soc.jpg" alt="Account"/>
+						<figcaption>
+							Social account
+						</figcaption>
+					</figure>
+				</label>
+			</div>
+		</section>
+		<section class="section-list first">
+			<h1>
+				Upload your documents
+				<small>(Doc, Docx,PDF, Markdown)</small>
+			</h1>
+			<a role=button class=btn>Upload new files</a>
+			<div class=upload-table>
+				<table>
+					<tr>
+						<th>file name</th>
+						<th>file size</th>
+						<th>number of words</th>
+						<th>remove</th>
+					</tr>
+					<tr>
+						<td>business_operation.docx</td>
+						<td>78kb</td>
+						<td>842</td>
+						<td>
+							<input type="checkbox"/>
+						</td>
+					</tr>
+					<tr>
+						<td>business_trip.docx</td>
+						<td>44kb</td>
+						<td>245</td>
+						<td>
+							<input type="checkbox"/>
+						</td>
+					</tr>
+					<tr>
+						<td>business.docx</td>
+						<td>44kb</td>
+						<td>1344</td>
+						<td>
+							<input type="checkbox"/>
+						</td>
+					</tr>
+				</table>
+			</div>
+		</section>
+		<section class="section-list second">
+			<h1>Choose your language pairs</h1>
+			<div class="lang-holder">
+				<div class="from">
+					<span>From</span>
+					<select>
+						<option value="English">English</option>
+						<option value="Arabic">Arabic</option>
+						<option value="Kurdish">Kurdish</option>
+						<option value="Judish">Judish</option>
+					</select>
+				</div>
+				<div class="to">
+					<span>To</span>
+					<select>
+						<option value="Arabic">Arabic</option>
+						<option value="English">English</option>
+						<option value="Kurdish">Kurdish</option>
+						<option value="Judish">Judish</option>
+					</select>
+					<select>
+						<option value="Kurdish">Kurdish</option>
+						<option value="Arabic">Arabic</option>
+						<option value="English">English</option>
+						<option value="Judish">Judish</option>
+					</select>
+					<a role=button class=btn>Add</a>
+				</div>
+			</div>
+		</section>
+		<section class="section-list third">
+			<h1>Tell us how urgent this job is</h1>
+			<div class=range-time>
+				<input type="range" min="0" max="10"/>
+				<span class=start>i got time</span>
+				<span class=end>yesterday</span>
+			</div>
+			<section class="timeline">
+				<h1>Timeline info</h1>
+				<p>
+					With an <span>average </span>timeline set up, something more text I should right to fill a lot of space. Perfect continous tenses
+				</p>
+			</section>
+		</section>
 	</form>
 </main>
 
