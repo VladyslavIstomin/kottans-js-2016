@@ -1,0 +1,18 @@
+{
+	"name": "PostCss",
+	"version": "1.0.0",
+	"description": "gulp for postcss and stylus",
+	"main": "gulpfile.js",
+	"dependencies": {
+		"gulp": "^3.9.0",
+		"gulp-postcss": "^6.1.1",
+		"autoprefixer": "^6.3.1",
+		"cssnano": "^3.6.1"
+	},
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/VladyslavIstomin/kottans-js-2016.git"
+	},
+	"author": "Vladyslav Istomin",
+	"license": "ISC"
+}
