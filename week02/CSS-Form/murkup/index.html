@@ -2,7 +2,8 @@
 <html lang=en>
 <meta charset=UTF-8>
 <title>Form</title>
-<link rel=stylesheet href=css/style.css>
+<link rel=stylesheet href=stylus/style.css>
+<script src="js/script.js" defer></script>
 
 <header class=head-page>
 	<a role=button class="btn btn-back">go back</a>
@@ -124,29 +125,35 @@
 		<section class="section-list second">
 			<h1>Choose your language pairs</h1>
 			<div class="lang-holder">
-				<div class="from">
+				<div class="select-row">
 					<span>From</span>
-					<select>
-						<option value="English">English</option>
-						<option value="Arabic">Arabic</option>
-						<option value="Kurdish">Kurdish</option>
-						<option value="Judish">Judish</option>
-					</select>
+					<div class="select">
+						<div class="lang">English</div>
+						<div class="select-list" hidden>
+							<div>Arabic</div>
+							<div>Kurdish</div>
+							<div>Judish</div>
+						</div>
+					</div>
 				</div>
-				<div class="to">
+				<div class="select-row">
 					<span>To</span>
-					<select>
-						<option value="Arabic">Arabic</option>
-						<option value="English">English</option>
-						<option value="Kurdish">Kurdish</option>
-						<option value="Judish">Judish</option>
-					</select>
-					<select>
-						<option value="Kurdish">Kurdish</option>
-						<option value="Arabic">Arabic</option>
-						<option value="English">English</option>
-						<option value="Judish">Judish</option>
-					</select>
+					<div class="select">
+						<div class="lang">Arabic</div>
+						<div class="select-list" hidden>
+							<div>English</div>
+							<div>Kurdish</div>
+							<div>Judish</div>
+						</div>
+					</div>
+					<div class="select">
+						<div class="lang">Kurdish</div>
+						<div class="select-list" hidden>
+							<div>Arabic</div>
+							<div>English</div>
+							<div>Judish</div>
+						</div>
+					</div>
 					<a role=button class=btn>Add</a>
 				</div>
 			</div>

@@ -420,17 +420,56 @@ button {
 .upload-table td {
   padding: 5px;
 }
-.lang-holder div {
-  margin-bottom: 20px;
-}
-.lang-holder div span {
-  text-transform: uppercase;
+.lang-holder .select-row {
   font-size: 16px;
   color: #6e768f;
-  margin-right: 15px;
+  margin-bottom: 20px;
 }
-.lang-holder div select {
+.lang-holder .select-row span {
+  display: inline-block;
+  vertical-align: top;
+  text-transform: uppercase;
+  margin-right: 15px;
+  margin-top: 21px;
+}
+.lang-holder .select {
+  display: inline-block;
+  background: #eceef4;
+  text-align: center;
+  cursor: pointer;
+  border: 1px solid #6e768f;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  -ms-border-radius: 5px;
+  border-radius: 5px;
   margin-right: 25px;
+}
+.lang-holder .select .lang {
+  width: 200px;
+  position: relative;
+  border-right: 1px solid #6e768f;
+  padding: 20px 0;
+  margin-right: 50px;
+}
+.lang-holder .select .lang::after {
+  content: '';
+  display: block;
+  background: url("../img/sprite-icons.png") no-repeat -192px -80px;
+  width: 10px;
+  height: 9px;
+  position: absolute;
+  top: 50%;
+  right: -30px;
+  z-index: 10;
+  margin-top: -5px;
+}
+.lang-holder .select .select-list div {
+  border-top: 1px solid #6e768f;
+  padding: 20px 0;
+}
+.lang-holder .btn {
+  vertical-align: top;
+  margin-bottom: 0;
 }
 .lang-holder .btn::before {
   background: url("../img/sprite-icons.png") no-repeat -272px -48px;

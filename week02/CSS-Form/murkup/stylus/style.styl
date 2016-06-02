@@ -259,22 +259,58 @@ button
 		padding: 5px
 
 .lang-holder
-	div
+	.select-row
+		font-size 16px
+		color #6e768f
 		margin-bottom 20px
 
 		span
+			display inline-block
+			vertical-align top
 			text-transform uppercase
-			font-size 16px
-			color #6e768f
 			margin-right 15px
+			margin-top 21px
 
-		select
-			margin-right 25px
+	.select
+		display inline-block
+		background page-bg
+		text-align center
+		cursor pointer
+		border 1px solid #6e768f
+		border-radius(5px)
+		margin-right 25px
 
-	.btn::before
-		background url('../img/sprite-icons.png') no-repeat -272px -48px
-		width 14px
-		height 14px
+		.lang
+			width 200px
+			position relative
+			border-right 1px solid #6e768f
+			padding 20px 0
+			margin-right 50px
+
+			&::after
+				content ''
+				display block
+				background: url('../img/sprite-icons.png') no-repeat -192px -80px;
+				width: 10px;
+				height: 9px;
+				position absolute
+				top 50%
+				right -30px
+				z-index 10
+				margin-top -5px
+
+		.select-list div
+			border-top 1px solid #6e768f
+			padding 20px 0
+
+	.btn
+		vertical-align top
+		margin-bottom 0
+
+		&::before
+			background url('../img/sprite-icons.png') no-repeat -272px -48px
+			width 14px
+			height 14px
 
 .range-time
 	position relative
