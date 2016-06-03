@@ -438,6 +438,7 @@ button {
   text-align: center;
   cursor: pointer;
   border: 1px solid #6e768f;
+  vertical-align: top;
   -webkit-border-radius: 5px;
   -moz-border-radius: 5px;
   -ms-border-radius: 5px;
