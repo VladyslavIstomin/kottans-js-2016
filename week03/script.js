@@ -17,13 +17,18 @@
 
 				for (var i = 1; i < arguments.length; i++) {
 					var source = arguments[i];
-					if (arguments[i] === undefined || arguments[i] === null || arguments[i] !== Object(source)) continue;
+					if (source === undefined || source === null || source !== Object(source)) continue;
 
-					Object.keys(source).forEach(function(i, v) {
-						if (source.propertyIsEnumerable(i)) {
-							obj[i] = source[i]
-						}
-					});
+					var keys = Object.keys(source);
+					if (keys.length) {
+						keys.forEach(function(i, v) {
+							if (source.propertyIsEnumerable(i)) {
+								obj[i] = source[i]
+							}
+						});
+					} else {
+						obj[i] = source;
+					}
 				}
 
 				return obj
