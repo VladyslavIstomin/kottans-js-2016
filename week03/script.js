@@ -19,15 +19,17 @@
 					var source = arguments[i];
 					if (source === undefined || source === null || source !== Object(source)) continue;
 
-					var keys = Object.keys(source);
-					if (keys.length) {
-						keys.forEach(function(i, v) {
-							if (source.propertyIsEnumerable(i)) {
-								obj[i] = source[i]
-							}
+					if ( source instanceof Date ||
+							source instanceof RegExp ||
+							source instanceof Map ||
+							source instanceof Set ) {
+						obj[source] = new source.constructor(source);
+					}
+
+					else {
+						Object.keys(Object(source)).forEach(function(key) {
+							obj[key] = source[key];
 						});
-					} else {
-						obj[i] = source;
 					}
 				}
 
