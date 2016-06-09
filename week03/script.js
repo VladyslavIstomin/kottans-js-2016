@@ -5,7 +5,7 @@
 		return obj instanceof Date || obj instanceof RegExp || obj instanceof Map || obj instanceof Set;
 	}
 
-	if (Object.assign) {
+	if (!Object.assign) {
 
 		Object.defineProperty(Object, 'deepAssign', {
 			writable: false,
