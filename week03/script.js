@@ -1,7 +1,11 @@
 (function() {
 	"use strict";
 
-	if (!Object.assign) {
+	function isOtherObject(obj) {
+		return obj instanceof Date || obj instanceof RegExp || obj instanceof Map || obj instanceof Set;
+	}
+
+	if (Object.assign) {
 
 		Object.defineProperty(Object, 'deepAssign', {
 			writable: false,
@@ -19,23 +23,33 @@
 					var source = arguments[i];
 					if (source === undefined || source === null || source !== Object(source)) continue;
 
-					if ( source instanceof Date ||
-							source instanceof RegExp ||
-							source instanceof Map ||
-							source instanceof Set ) {
+					if (isOtherObject(source)) {
 						obj[source] = new source.constructor(source);
 					}
 
 					else {
 						Object.keys(Object(source)).forEach(function(key) {
-							obj[key] = source[key];
+							if (source.propertyIsEnumerable(key)) {
+
+								if (typeof source[key] === 'object' && typeof obj[key] === 'object') {
+									obj[key] = Object.deepAssign(obj[key], source[key]);
+								}
+
+								else if (isOtherObject(source[key])) {
+									obj[key] = new source[key].constructor(source[key]);
+								}
+
+								else {
+									obj[key] = source[key];
+								}
+							}
 						});
 					}
 				}
 
 				return obj
 			}
-		})
+		});
 
 	}
 })();
