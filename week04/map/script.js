@@ -2,8 +2,12 @@
 
 class MyPromise extends Promise {
 
-	map(iterable, mapper){
-		return new this.constructor((resolve, reject) =>{
+	constructor (...args) {
+		super(...args)
+	}
+
+	static map(iterable, mapper){
+		return new this((resolve, reject) =>{
 			let result = [];
 			let counter = 0;
 
@@ -23,11 +27,8 @@ class MyPromise extends Promise {
 	}
 }
 
-
-let mypromise = new MyPromise(()=>{});
-
 let promise1 = new Promise((a,b) => a('a'));
 let promise2 = new Promise((a,b) => a('b'));
 let promise3 = new Promise((a,b) => a('c'));
 
-mypromise.map([promise1, promise2, promise3], (value)=> value).then((result) => console.log(result));
+MyPromise.map([promise1, promise2, promise3], (value)=> value).then((result) => console.log(result));
