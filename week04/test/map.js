@@ -8,10 +8,6 @@ describe("Promise.map-test", function () {
 		return val * 2;
 	}
 
-	function deferredMapper(val) {
-		return Promise.delay(1, mapper(val));
-	}
-
 	specify("should map input values array", function() {
 		var input = [1, 2, 3];
 		return MyPromise.map(input, mapper).then(
@@ -35,16 +31,6 @@ describe("Promise.map-test", function () {
 	specify("should map mixed input array", function() {
 		var input = [1, Promise.resolve(2), 3];
 		return MyPromise.map(input, mapper).then(
-			function(results) {
-				assert.deepEqual(results, [2,4,6]);
-			},
-			assert.fail
-		);
-	});
-
-	specify("should map input when mapper returns a promise", function() {
-		var input = [1,2,3];
-		return MyPromise.map(input, deferredMapper).then(
 			function(results) {
 				assert.deepEqual(results, [2,4,6]);
 			},
