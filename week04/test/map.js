@@ -1,7 +1,7 @@
 "use strict";
 
 var assert = require("assert");
-var MyPromise = require("../script.js");
+var MyPromise = require("../script");
 describe("Promise.map-test", function () {
 
 	function mapper(val) {

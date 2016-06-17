@@ -11,23 +11,13 @@ class MyPromise extends Promise {
 				for (let item of iterable) {
 					counter++;
 
-					if (item instanceof Promise) {
-						item.then(val => {
-							result.push( mapper(val) );
+					Promise.resolve(item).then(val => {
+						result.push( mapper(val) );
 
-							if (! --counter) {
-								resolve(result);
-							}
-						}, reject)
-					} else {
-						Promise.resolve(item).then(val => {
-							result.push( mapper(val) );
-
-							if (! --counter) {
-								resolve(result);
-							}
-						}, reject)
-					}
+						if (! --counter) {
+							resolve(result);
+						}
+					}, reject)
 				}
 			};
 
@@ -38,6 +28,50 @@ class MyPromise extends Promise {
 			} else {
 				promiseHendler(iterable);
 			}
+		})
+	};
+
+	static some(input, count) {
+		return new this((resolve, reject) => {
+			let result = [];
+			let rejectedResult = [];
+			let counter = 0;
+			let rejectCounter = 0;
+
+			if (count < 0 || isNaN(count) || input.length <  count) {
+				reject(new Error('Error'));
+				return;
+			}
+
+			if(count === 0) {
+				resolve([]);
+				return;
+			}
+
+			Promise.resolve(input).then(iterable => {
+				for (let iterableItem of iterable) {
+					Promise.resolve(iterableItem).then( item => {
+						counter++;
+						if (counter > count) return;
+
+						result.push(item);
+						if (counter === count) {
+							resolve(result);
+						}
+					}).catch(err => {
+						rejectCounter++;
+						if (rejectCounter > count) return;
+
+						rejectedResult.push(err);
+						if (rejectCounter === count) {
+							reject(rejectedResult);
+						}
+
+					});
+				}
+			}).catch(err => {
+				reject(err)
+			});
 		})
 	}
 }
