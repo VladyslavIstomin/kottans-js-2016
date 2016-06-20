@@ -7,7 +7,7 @@ class MyPromise extends Promise {
 			let result = [];
 			let counter = 0;
 
-			const promiseHendler = (iterable) => {
+			const promiseHandler = (iterable) => {
 				for (let item of iterable) {
 					counter++;
 
@@ -23,10 +23,10 @@ class MyPromise extends Promise {
 
 			if (iterable instanceof Promise) {
 				iterable.then(val => {
-					promiseHendler(val);
+					promiseHandler(val);
 				})
 			} else {
-				promiseHendler(iterable);
+				promiseHandler(iterable);
 			}
 		})
 	};
@@ -66,13 +66,16 @@ class MyPromise extends Promise {
 						if (rejectCounter === count) {
 							reject(rejectedResult);
 						}
-
 					});
 				}
 			}).catch(err => {
 				reject(err)
 			});
 		})
+	};
+
+	static reduce() {
+
 	}
 }
 
