@@ -74,8 +74,12 @@ class MyPromise extends Promise {
 		})
 	};
 
-	static reduce() {
+	static reduce(input, toReduce, initValue) {
+		return new this((resolve, reject) => {
+			Promise.resolve(input).then(iterable => {
 
+			}).catch(err => reject(err))
+		})
 	}
 }
 
