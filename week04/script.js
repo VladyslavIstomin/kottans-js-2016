@@ -78,7 +78,9 @@ class MyPromise extends Promise {
 		return new this((resolve, reject) => {
 			Promise.resolve(input).then(iterable => {
 
-			}).catch(err => reject(err))
+			}).catch(err => {
+				reject(err)
+			})
 		})
 	}
 }
