@@ -4,23 +4,25 @@ const sum = (val, delim) =>{
 
 		if(num < 0) throw new Error('Negative number');
 
+		if(num > 1000) num = 0;
+
 		return prevVal + num;
 	}, 0);
 };
 
 const add = (str) => {
+	let delimiter = ',';
+	let value = str.replace('\n', delimiter);
 
 	if(str === '') return 0;
 
 	if(str.match('^//')) {
-		let delimiter = str.split('\n')[0].substring(2,3);
-		let value = str.split('\n')[1];
+		delimiter = str.split('\n')[0].substring(2).replace(/[\[\]]/g, '');
+		console.log(delimiter);
+		value = str.split('\n')[1];
 
 		return sum(value, delimiter);
 	}
-
-	let delimiter = ',';
-	let value = str.replace('\n', delimiter);
 
 	return sum(value, delimiter)
 };

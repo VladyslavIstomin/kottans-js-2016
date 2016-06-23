@@ -34,4 +34,16 @@ describe('Kata #1 test', () => {
 	it('should return Error if pass string //;\n1;2', () => {
 		assert.throw(()=>{add('//;\n1;-2')}, 'Negative number')
 	});
+
+	it('Numbers bigger than 1000 should be ignored', () => {
+		assert.equal(add('1001,2'), 2)
+	});
+
+	it('should return 6 if pass string //[***]\n1***2***3', () => {
+		assert.equal(add('//[***]\n1***2***3'), 6)
+	});
+
+	it('should return 6 if pass multiple delimiters //[*][%]\n1*2%3', () => {
+		assert.equal(add('//[*][%]\n1*2%3'), 6)
+	});
 });
