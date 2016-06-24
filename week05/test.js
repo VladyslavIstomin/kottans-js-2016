@@ -44,6 +44,6 @@ describe('Kata #1 test', () => {
 	});
 
 	it('should return 6 if pass multiple delimiters //[*][%]\n1*2%3', () => {
-		assert.equal(add('//[*][%]\n1*2%3'), 6)
+		assert.equal(add('//[*][%][&]\n1*2%3&4'), 10)
 	});
 });
