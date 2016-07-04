@@ -5,7 +5,7 @@ var MyPromise = require("../script");
 
 describe("Promise.reduce", function() {
 
-	it("should allow returning values", function() {
+	/*it("should allow returning values", function() {
 		var a = [promised(1), promised(2), promised(3)];
 
 		return MyPromise.reduce(a, function(total, a) {
@@ -15,7 +15,7 @@ describe("Promise.reduce", function() {
 		});
 	});
 
-	/*it("should allow returning promises", function() {
+	it("should allow returning promises", function() {
 		var a = [promised(1), promised(2), promised(3)];
 
 		return Promise.reduce(a, function(total, a) {

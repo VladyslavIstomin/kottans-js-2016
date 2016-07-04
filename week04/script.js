@@ -77,7 +77,7 @@ class MyPromise extends Promise {
 	static reduce(input, toReduce, initValue) {
 		return new this((resolve, reject) => {
 			Promise.resolve(input).then(iterable => {
-
+				/* Нихрена не понял как же работает метод reduce */
 			}).catch(err => {
 				reject(err)
 			})
