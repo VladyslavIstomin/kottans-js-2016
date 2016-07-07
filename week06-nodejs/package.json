@@ -1,0 +1,19 @@
+{
+  "name": "Nodejs",
+  "version": "1.0.0",
+  "description": "Test server",
+  "main": "main.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/VladyslavIstomin/kottans-js-2016.git"
+  },
+  "author": "Vladyslav Istomin",
+  "license": "ISC",
+  "scripts": {
+    "start": "node config/nodemon-config"
+  },
+  "devDependencies": {
+    "config": "^1.21.0",
+    "nodemon": "^1.9.2"
+  }
+}
