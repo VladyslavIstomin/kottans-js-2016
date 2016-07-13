@@ -2,12 +2,25 @@ const http = require('http');
 
 class App {
 
-	use(callback) {
-		return this.server = http.createServer(callback);
+	constructor() {
+		this.serverBody = []
+	}
+
+	use() {
+		for (let i=0; i<arguments.length; i++) {
+			this.serverBody.push(arguments[i])
+		}
 	}
 
 	start(port, host, callback) {
-		this.server.listen(port, host, callback);
+		http.createServer((req, res) => {
+
+			for (let i=0; i<this.serverBody.length; i++) {
+				this.serverBody[i](req, res)
+			}
+
+		}).listen(port, host);
+		callback();
 	}
 }
 
