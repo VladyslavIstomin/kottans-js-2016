@@ -30,7 +30,6 @@ const add = (str) => {
 
 		return sum(value, delimiter);
 	}
-
 	return sum(value, delimiter)
 };
 
