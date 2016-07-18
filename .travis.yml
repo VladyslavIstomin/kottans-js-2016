@@ -4,6 +4,4 @@ node_js:
 before_install:
   - cd week05-tdd
 install:
-  - travis_wait mvn install
-script:
-  - npm test
+  - npm install
