@@ -1,5 +1,5 @@
-const add = require('./script');
-const assert = require('chai').assert;
+var add = require('./script');
+var assert = require('chai').assert;
 
 describe('Kata #1 test', function() {
 
