@@ -3,3 +3,7 @@ node_js:
   - "0.12"
 before_install:
   - cd week05-tdd
+install:
+  - npm install
+script:
+  - npm test
