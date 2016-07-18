@@ -3,5 +3,9 @@ node_js:
   - "6.1"
 before_install:
   - cd week05-tdd
+install:
+  - npm i
+script:
+  - npm test
 notifications:
   email: "istomin.vlad1988@gmail.com"
