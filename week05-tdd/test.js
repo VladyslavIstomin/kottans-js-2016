@@ -24,15 +24,15 @@ describe('Kata #1 test', function() {
 	});
 
 	it('should return Error if pass string -5', function() {
-		assert.throw(()=>{add('-5')}, 'Negative number')
+		assert.throw(function(){add('-5')}, 'Negative number')
 	});
 
 	it('should return Error if pass string 1\n2,3', function() {
-		assert.throw(()=>{add('1\n-2,3')}, 'Negative number')
+		assert.throw(function(){add('1\n-2,3')}, 'Negative number')
 	});
 
 	it('should return Error if pass string //;\n1;2', function() {
-		assert.throw(()=>{add('//;\n1;-2')}, 'Negative number')
+		assert.throw(function(){add('//;\n1;-2')}, 'Negative number')
 	});
 
 	it('Numbers bigger than 1000 should be ignored', function() {
