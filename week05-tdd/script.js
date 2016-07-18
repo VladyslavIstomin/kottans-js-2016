@@ -1,5 +1,5 @@
-const sum = (val, delim) =>{
-	let pattern = new RegExp(delim);
+var sum = function(val, delim) {
+	var pattern = new RegExp(delim);
 
 	if(delim.search(/]\[/g) !== -1) {
 		pattern = new RegExp(delim.replace(/]\[/g, ''));
@@ -7,8 +7,8 @@ const sum = (val, delim) =>{
 		pattern = delim.replace(/^(\[)|(])$/g, '');
 	}
 
-	return val.split(pattern).reduce((prevVal, curVal, index) => {
-		let num = parseInt(curVal, 10);
+	return val.split(pattern).reduce(function(prevVal, curVal, index) {
+		var num = parseInt(curVal, 10);
 
 		if(num < 0) throw new Error('Negative number');
 
@@ -18,9 +18,9 @@ const sum = (val, delim) =>{
 	}, 0);
 };
 
-const add = (str) => {
-	let delimiter = ',';
-	let value = str.replace('\n', delimiter);
+var add = function(str) {
+	var delimiter = ',';
+	var value = str.replace('\n', delimiter);
 
 	if(str === '') return 0;
 
