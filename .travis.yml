@@ -1,10 +1,5 @@
 language: node_js
 node_js:
   - "0.12"
-  - "6.1"
 before_install:
   - cd week05-tdd
-install:
-  - npm install
-script:
-  - npm test
