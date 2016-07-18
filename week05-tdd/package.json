@@ -14,6 +14,7 @@
     "mocha": "^2.5.3"
   },
   "scripts": {
-    "test": "node_modules/.bin/mocha -w"
+    "test": "node_modules/.bin/mocha -w",
+    "start": "console.log('Finish')"
   }
 }
